@@ -1,5 +1,3 @@
-// Matheus Dal Mago (110103604)
-
 /*
  * CalculateTip.java
  *

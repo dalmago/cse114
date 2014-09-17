@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class CylinderVolume {
@@ -14,8 +13,8 @@ public class CylinderVolume {
 		double area = radius*radius*Math.PI;
 		double volume = area*length;
 
-		System.out.println("The area of the cylinder is: " + area);
-		System.out.println("The volume of the cylinder is: " + volume);
+		System.out.printf("The area of the cylinder is: %.4f\n", area);
+		System.out.printf("The volume of the cylinder is: %.1f\n",  volume);
 	}
 
 }

@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class FeetToMeters {
@@ -10,7 +9,7 @@ public class FeetToMeters {
 
 		double feet = input.nextDouble();
 
-		System.out.println(feet + " feet is " + feet*0.305 + " meters");
+		System.out.printf("%.2f feet is %.2f  meters\n", feet, (feet*0.305));
 
 	}
 

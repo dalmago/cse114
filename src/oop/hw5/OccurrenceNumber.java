@@ -18,14 +18,5 @@ public class OccurrenceNumber
         }
         return occurrence;
     }
-	public static void main(String[] args) {
-        String s = "1234567890987";
-
-        for (int i:count(s)){
-            System.out.print(i + " ");
-        }
-        System.out.println();
-
-	}
 }
 

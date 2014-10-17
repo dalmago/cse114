@@ -5,9 +5,6 @@
  * Distributed under terms of the MIT license.
  */
 
-//import java.util.Scanner;
-//import javax.swing.JOptionPane;
-
 public class OccurrenceNumber
 {
     public static int[] count(String s){

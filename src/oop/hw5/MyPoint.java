@@ -44,16 +44,4 @@ public class MyPoint
 
         return (Math.sqrt(a+b));
     }
-
-	public static void main(String[] args) {
-
-        MyPoint point1 = new MyPoint();
-        MyPoint point2 = new MyPoint(10, 30.5);
-
-        System.out.printf("First diference: %.3f\n", point1.distance(point2));
-
-        System.out.printf("Second diference: %.3f\n", point2.distance(0, 0));
-
-	}
 }
-

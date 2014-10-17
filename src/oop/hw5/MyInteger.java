@@ -5,9 +5,6 @@
  * Distributed under terms of the MIT license.
  */
 
-//import java.util.Scanner;
-//import javax.swing.JOptionPane;
-
 public class MyInteger
 {
     private int value;
@@ -23,9 +20,9 @@ public class MyInteger
     public boolean isPrime(){
         for (int i=2; i<value; i++){
             if (value%i == 0)
-                return true;
+                return false;
         }
-        return false;
+        return true;
     }
 
     public static boolean isEven(int value){return value%2==0;}
@@ -33,9 +30,9 @@ public class MyInteger
     public static boolean isPrime(int value){
         for (int i=2; i<value; i++){
             if (value%i == 0)
-                return true;
+                return false;
         }
-        return false;
+        return true;
     }
 
     public static boolean isEven(MyInteger value){return value.value%2==0;}
@@ -43,9 +40,9 @@ public class MyInteger
     public static boolean isPrime(MyInteger value){
         for (int i=2; i<value.value; i++){
             if (value.value%i == 0)
-                return true;
+                return false;
         }
-        return false;
+        return true;
     }
 
     public boolean equals(int value){return (value==this.value);}
@@ -59,30 +56,4 @@ public class MyInteger
         }
         return value;
     }
-
-	public static void main(String[] args) {
-        //Scanner stdin = new Scanner (System.in);
-        MyInteger int1 = new MyInteger(4);
-        MyInteger int2 = new MyInteger(3);
-        MyInteger int3 = new MyInteger(2);
-        MyInteger int4 = new MyInteger(4);
-
-        if (int1.isEven())
-            System.out.print("even");
-
-        if (!int2.isEven())
-            System.out.print("even");
-
-        if (!int3.isOdd())
-            System.out.print("odd");
-
-        if (int3.equals(2))
-            System.out.println("equals");
-
-        if (int4.equals(int1))
-            System.out.println("equal");
-
-        System.out.println("parse: "+parseInt("341"));
-	}
 }
-

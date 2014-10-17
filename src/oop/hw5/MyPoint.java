@@ -5,9 +5,6 @@
  * Distributed under terms of the MIT license.
  */
 
-import java.util.Scanner;
-import javax.swing.JOptionPane;
-
 public class MyPoint
 {
     private double x;

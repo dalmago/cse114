@@ -10,10 +10,13 @@ import javax.swing.JOptionPane;
 
 public class MyPoint
 {
-    private double x = 0;
-    private double y = 0;
+    private double x;
+    private double y;
 
-    public MyPoint(){}
+    public MyPoint(){
+        x = 0;
+        y = 0;
+    }
 
     public MyPoint(double x, double y){
         this.x = x;

@@ -57,5 +57,10 @@ public class Account
     public void deposit(double amount){
         balance+=amount;
     }
+
+    public String toString(){
+        return ("ID: "+id+"\nBalance: "+balance+"\nAnnual Interest Rate: "+
+                annualInterestRate+"\nDate of creation: "+dateCreated);
+    }
 }
 

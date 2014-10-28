@@ -12,7 +12,7 @@ public class ArrayList
 
     public ArrayList(){
         array = new Object[5];
-        index = 0;
+        index = 0;  //index of the first empty position
     }
 
     public void add(Object o){
@@ -40,13 +40,14 @@ public class ArrayList
             array[index] = o;
             this.index++;
         } else{
-            array[index] = o;
-            this.index = index+1;
+            //array[index] = o;
+            //this.index = index+1;
+            System.out.println("Index out of range.");
         }
     }
 
     public void clear(){
-        array = new Object[5];
+        //array = new Object[5];
         index = 0;
     }
 
@@ -59,7 +60,11 @@ public class ArrayList
     }
 
     public Object get(int index){
-        return array[index];
+        if (index < this.index){
+            return array[index];
+        }
+        else
+            return null;
     }
 
     public int indexOf(Object o){
@@ -100,17 +105,28 @@ public class ArrayList
     }
 
     public Object remove(int index){
-        Object ans = array[index];
-        for (int i=index; i<this.index-1; i++){
-            array[i] = array[i+1];
+        if (index < this.index){
+            Object ans = array[index];
+            for (int i=index; i<this.index-1; i++){
+                array[i] = array[i+1];
+            }
+            this.index--;
+            return ans;
+        }else{
+            System.out.println("Index out of range.");
+            return null;
         }
-        this.index--;
-        return ans;
     }
 
     public Object set (int index, Object o){
-        array[index] = o;
-        return o;
+        if (index <= this.index){
+            array[index] = o;
+            return o;
+        }
+        else{
+            System.out.println("Index out of range.");
+            return null;
+        }
     }
 }
 

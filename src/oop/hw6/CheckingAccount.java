@@ -34,11 +34,7 @@ public class CheckingAccount extends Account
     }
 
     public String toString(){
-        return ("Checking account\nID: "+getId()+
-                "\nBalance: "+getBalance()+
-                "\nLimit: "+getLimit()+
-                "\nAnnual Interest Rate: "+getAnnualInterestRate()+
-                "\nDate of creation: "+getDateCreated());
+        return ("Checking account\n"+super.toString()+"\nLimit: "+getLimit());
     }
 }
 

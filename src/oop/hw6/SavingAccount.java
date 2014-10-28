@@ -16,10 +16,7 @@ public class SavingAccount extends Account
     }
 
     public String toString(){
-        return ("Saving account\nID: "+getId()+
-                "\nBalance: "+getBalance()+
-                "\nAnnual Interest Rate: "+getAnnualInterestRate()+
-                "\nDate of creation: "+getDateCreated());
+        return ("Saving account\n"+super.toString());
     }
 }
 

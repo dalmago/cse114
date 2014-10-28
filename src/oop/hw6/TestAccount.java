@@ -16,12 +16,10 @@ public class TestAccount
 
         ac1.deposit(3000);
 
-        System.out.println("Balance: "+ac1.getBalance());
+        System.out.println(ac1.toString());
+
         System.out.println("Monthly Interest Rate: "+
                 ac1.getMonthlyInterestRate());
-        System.out.println("Account created on: "+ac1.getDateCreated());
-
-        System.out.println(ac1.toString());
 	}
 }
 

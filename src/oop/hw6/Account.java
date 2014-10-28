@@ -13,10 +13,7 @@ public class Account
     private java.util.Date dateCreated;
 
     public Account(){
-        id = 0;
-        balance = 0;
-        annualInterestRate = 0;
-        dateCreated = new java.util.Date();
+        this(0,0);
     }
 
     public Account(int id, double balance){
@@ -49,6 +46,7 @@ public class Account
         if (amount > balance){
             System.out.println("There are not enough founds to withdraw."+
                     "\nActual balance: "+balance);
+            return;
         } else{
             balance -= amount;
         }

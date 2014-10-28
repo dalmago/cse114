@@ -18,7 +18,7 @@ SavingsAccounts - ok
 
 Test account and Subclasses - ok
 
-ArrayList
+ArrayList - ok
 
 
 Listing 10.6 - Course

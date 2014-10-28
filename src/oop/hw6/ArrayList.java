@@ -92,7 +92,7 @@ public class ArrayList
 
     public boolean remove(Object o){
         for (int i=0; i<index; i++){
-            if (array[index] == o){
+            if (array[i] == o){
                 for (int j=i; j<index-1; j++){
                     array[j] = array[j+1];
                 }

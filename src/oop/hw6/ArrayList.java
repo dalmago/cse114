@@ -16,26 +16,27 @@ public class ArrayList
     }
 
     public void add(Object o){
-        if (index == array.length -1){
-            Object[] temp = new Object[array.length*2];
-            for (int i=0; i<array.length; i++)
-                temp[i] = array[i];
-            array = temp;
-        }
-        array[index] = o;
-        index++;
+        add(index, o);
+        //if (index == array.length){
+            //Object[] temp = new Object[array.length*2];
+            //for (int i=0; i<array.length; i++)
+                //temp[i] = array[i];
+            //array = temp;
+        //}
+        //array[index] = o;
+        //index++;
     }
 
     public void add (int index, Object o){
-        if (index <= this.index){
-            if (index == array.length -1){
+        if (index <= this.index && index>=0){
+            if (this.index == array.length){
                 Object[] temp = new Object[array.length*2];
                 for (int i=0; i<array.length; i++)
                     temp[i] = array[i];
                 array = temp;
             }
-            for (int i=this.index; i>=index; i--)
-                array[i+1] = array[i];
+            for (int i=this.index; i>index; i--)
+                array[i] = array[i-1];
 
             array[index] = o;
             this.index++;
@@ -47,7 +48,7 @@ public class ArrayList
     }
 
     public void clear(){
-        //array = new Object[5];
+        array = new Object[5];
         index = 0;
     }
 
@@ -60,11 +61,13 @@ public class ArrayList
     }
 
     public Object get(int index){
-        if (index < this.index){
+        if (index < this.index && index >= 0){
             return array[index];
         }
-        else
+        else{
+            System.out.println("Index out of range.");
             return null;
+        }
     }
 
     public int indexOf(Object o){
@@ -105,7 +108,7 @@ public class ArrayList
     }
 
     public Object remove(int index){
-        if (index < this.index){
+        if (index < this.index && index >= 0){
             Object ans = array[index];
             for (int i=index; i<this.index-1; i++){
                 array[i] = array[i+1];
@@ -119,7 +122,7 @@ public class ArrayList
     }
 
     public Object set (int index, Object o){
-        if (index <= this.index){
+        if (index <= this.index && index >= 0){
             array[index] = o;
             return o;
         }

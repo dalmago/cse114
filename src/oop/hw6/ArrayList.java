@@ -17,14 +17,6 @@ public class ArrayList
 
     public void add(Object o){
         add(index, o);
-        //if (index == array.length){
-            //Object[] temp = new Object[array.length*2];
-            //for (int i=0; i<array.length; i++)
-                //temp[i] = array[i];
-            //array = temp;
-        //}
-        //array[index] = o;
-        //index++;
     }
 
     public void add (int index, Object o){

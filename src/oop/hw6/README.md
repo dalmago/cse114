@@ -12,14 +12,11 @@ TestTime - ok
 
 Account - ok
 
-TestAccount - ok
+CheckingAccount - ok
 
-CheckingAccount
+SavingsAccounts - ok
 
-SavingsAccounts
-
-TestSubclasses
-
+Test account and Subclasses - ok
 
 ArrayList
 

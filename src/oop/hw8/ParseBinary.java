@@ -17,11 +17,12 @@ public class ParseBinary{
         if (!binary.matches("[01]*"))
             throw new BinaryFormatException(binary);
 
-        int ans = 0;
-        for (int i=binary.length()-1; i>=0; i--){
-            ans+= (binary.charAt(i)-'0')*Math.pow(2, binary.length()-i-1);
-        }
-        return ans;
+        //int ans = 0;
+        //for (int i=binary.length()-1; i>=0; i--){
+            //ans+= (binary.charAt(i)-'0')*Math.pow(2, binary.length()-i-1);
+        //}
+
+        return Integer.parseInt(binary);
     }
 
     public static void main (String[] args) {
@@ -32,8 +33,8 @@ public class ParseBinary{
 
         for (int i=0; i<args.length; i++){
             try{
-                System.out.println("Binary "+args[i]+
-                        " in decimal: "+parseBinary(args[i]));
+                System.out.println("Binary String "+args[i]+
+                        " in integer: "+parseBinary(args[i]));
             } catch (BinaryFormatException ex){
                 System.out.println(ex);
             }

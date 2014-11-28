@@ -30,10 +30,10 @@ public class LargestInArray
 
         int[] array = new int[n];
 
+        System.out.println("Type the "+ n + " elements: ");
         for (int i=0; i<n; i++){
             array[i] = input.nextInt();
         }
-
 
         System.out.println("Largest: "+largest(array, 0));
     }

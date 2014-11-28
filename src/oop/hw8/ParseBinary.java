@@ -17,12 +17,12 @@ public class ParseBinary{
         if (!binary.matches("[01]*"))
             throw new BinaryFormatException(binary);
 
-        //int ans = 0;
-        //for (int i=binary.length()-1; i>=0; i--){
-            //ans+= (binary.charAt(i)-'0')*Math.pow(2, binary.length()-i-1);
-        //}
+        int ans = 0;
+        for (int i=binary.length()-1; i>=0; i--){
+            ans+= (binary.charAt(i)-'0')*Math.pow(10, binary.length()-i-1);
+        }
 
-        return Integer.parseInt(binary);
+        return ans;
     }
 
     public static void main (String[] args) {

@@ -23,7 +23,7 @@ public class TwentyFour {
 	private ArrayList<String> equations;
 
 	public TwentyFour(int[] input) {
-		STOP = true;
+		STOP = false;
 
 		this.input = input;
 		ans = new ArrayList<Double>();
@@ -38,7 +38,6 @@ public class TwentyFour {
 			for (int j = 0; j < permOp.length; j++) {
 
 				// ((0 x 0) x 0) x 0
-
 				ans.add(solve(
 						(solve((solve(permInput[i][0], permInput[i][1],
 								permOp[j][0])), permInput[i][2], permOp[j][1])),
@@ -85,7 +84,7 @@ public class TwentyFour {
 								permOp[j][1]), permInput[i][3], permOp[j][2]),
 						permOp[j][0]));
 
-				equations.add(permInput[i][0] + "" + permOp[j][0] + " (("
+				equations.add(permInput[i][0] + "" + permOp[j][0] + "(("
 						+ permInput[i][1] + "" + permOp[j][1] + ""
 						+ permInput[i][2] + ")" + permOp[j][2] + ""
 						+ permInput[i][3] + ")");
@@ -120,16 +119,12 @@ public class TwentyFour {
 			return x * y;
 		case '/':
 			return x / y;
-		case '^':
-			return Math.pow(x, y);
-		case '%':
-			return x % y;
 		default:
 			System.out.println("Not supported operation: " + x + " " + op + " "
 					+ y);
 			System.exit(-1);
 		}
-		return 0;
+        return 0;
 	}
 
 	private void calculatePermutations() {
@@ -206,17 +201,21 @@ public class TwentyFour {
 		TwentyFour tf = new TwentyFour(values);
 		tf.calculateEquations();
 
-		ArrayList<Double> answer = tf.getAns();
-		ArrayList<String> equations = tf.getEquations();
+        ArrayList<Double> answer = tf.getAns();
+        ArrayList<String> equations = tf.getEquations();
 
-		if (answer.indexOf(tf.CONSTANT) != -1)
-			while (answer.indexOf(tf.CONSTANT) != -1) {
-				System.out.println(equations.get(answer.indexOf(tf.CONSTANT)));
-				equations.remove(answer.indexOf(tf.CONSTANT));
-				answer.remove(answer.indexOf(tf.CONSTANT));
-			}
-		else {
-			System.out.println("Pattern not found with these numbers");
-		}
-	}
+        boolean found = false;
+        for (int j=0; j<answer.size(); j++){
+            double x = Math.round(answer.get(j)*100);
+            x/=100;
+
+            if (x == 24.0 && !found){
+                System.out.println(equations.get(j));
+                found = true;
+            }
+
+        }
+        if (! found)
+            System.out.println("Pattern not found with these numbers");
+    }
 }
